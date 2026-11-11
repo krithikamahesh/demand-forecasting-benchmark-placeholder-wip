@@ -1,0 +1,20 @@
+Models:
+Baselines: seasonal-naive and SARIMA/Prophet.
+Gradient boosting: LightGBM with lag and calendar features.
+Deep learning: an LSTM, then a Temporal Fusion Transformer or PatchTST, trained with quantile loss.
+
+What makes it stand out:
+Use walk-forward (rolling-origin) cross-validation instead of a random split, so there is no leakage.
+Report MAPE/MASE and the coverage of the intervals.
+Compare the deep models against the simple baselines honestly. Often the simple ones win, and saying so shows maturity.
+Add an anomaly-detection section, such as flagging unusual demand days from residuals.
+
+
+Deliverables: 
+A Streamlit dashboard showing the forecast with its confidence band, and a README with a results table and plots.
+
+
+A README with the problem statement, a results table, GIFs or screenshots, and how to run it.
+Fixed random seeds and tracked experiments (Weights & Biases or MLflow).
+A Dockerfile and a basic GitHub Actions workflow that runs lint and tests.
+A short "Limitations and next steps" section.
